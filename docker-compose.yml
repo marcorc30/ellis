@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    # Constrói a imagem a partir do Dockerfile no diretório atual.
+    # O código da aplicação é copiado para dentro da imagem.
+    build: .
+    container_name: api
+    # Mapeia a porta 8000 do host para a porta 8000 do contêiner.
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app #monta o diretorio atual em /app dentro do container
+
+
+# para subir a aplicaçao: docker compose up -d
